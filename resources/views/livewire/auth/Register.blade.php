@@ -13,49 +13,54 @@
                     <div class="login-form">
                       <div class="text-center">
                         <h1 class="h4 text-gray-900 mb-4">Register</h1>
-                      </div>
-                      <form class="user" wire:submit.prevent="login">
-                        @if (session()->has('successLogin'))
-                              <script>
-                                var url = "{{ route('admin.home') }}";
-                                setTimeout(function(){
-                                    window.location = url;
-                                },3500);
-                            </script>
-                        @endif
-                        @if (session()->has('errLog'))
-                        <div class="alert alert-danger alert-dismissible" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                           {{ session('errLog') }}
-                          </div>
-                        @endif
-                        <div class="form-group">
-                          <input type="email" class="form-control  @error('email') is-invalid @enderror" name="email" wire:model.lazy="email" aria-describedby="emailHelp"
-                            placeholder="Enter Email Address">
-                            @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
-                        <div class="form-group">
-                             <input type="password" name="password" wire:model.lazy="password" class="form-control  @error('password') is-invalid @enderror" placeholder="Password">
-                             @error('password') <span class="text-danger">{{ $message }}</span> @enderror
+                            <form class="user" wire:submit.prevent="regist">
+                                @if (session()->has('successRegist'))
+                                    <script>
+                                        var url = "{{ route('login') }}";
+                                        setTimeout(function(){
+                                            window.location = url;
+                                        },3500);
+                                    </script>
+                                @endif
+                                @if (session()->has('errLog'))
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                {{ session('errLog') }}
+                                </div>
+                                @endif
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control  @error('name') is-invalid @enderror" name="name" wire:model.lazy="name" placeholder="Enter your name">
+                                    @error('email') <span class="text-danger">{{ $message }}</span> @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input type="email" class="form-control  @error('email') is-invalid @enderror" name="email" wire:model.lazy="email" aria-describedby="emailHelp"
+                                    placeholder="Enter Email Address">
+                                    @error('email') <span class="text-danger">{{ $message }}</span> @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" wire:model.lazy="password" class="form-control  @error('password') is-invalid @enderror" placeholder="Password">
+                                    @error('password') <span class="text-danger">{{ $message }}</span> @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm_password">Confirm Password</label>
+                                    <input type="password" name="confirm_password" wire:model.lazy="confirm_password" class="form-control  @error('confirm_password') is-invalid @enderror" placeholder="Confirm Password">
+                                    @error('confirm_password') <span class="text-danger">{{ $message }}</span> @enderror
+                                </div>
+                                <div class="form-group">
+                                    @if (session()->has('successRegist'))
+                                        <button class="btn btn-primary btn-block" disabled> <span class="spinner-border spinner-border-sm"></span> Redirecting...</button>
+                                    @else
+                                        <button class="btn btn-primary btn-block">register</button>
+                                    @endif
+                                </div>
+                            </form>
                         </div>
-                        <div class="form-group">
-                          <div class="custom-control custom-checkbox small" style="line-height: 1.5rem;">
-                            <input type="checkbox" class="custom-control-input" id="customCheck">
-                            <label class="custom-control-label" for="customCheck">Remember
-                              Me</label>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                            @if (session()->has('successLogin'))
-                                <button class="btn btn-primary btn-block" disabled> <span class="spinner-border spinner-border-sm"></span> Redirecting...</button>
-                            @else
-                                <button class="btn btn-primary btn-block">Login</button>
-                            @endif
-                        </div>
-                    </form>
-                      </div>
                     </div>
                   </div>
                 </div>

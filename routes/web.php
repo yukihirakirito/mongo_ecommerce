@@ -6,6 +6,7 @@ use App\Http\Livewire\Auth\Login;
 use App\Models\User;
 use App\Http\Livewire\Admin\Category\Category;
 use App\Http\Livewire\Admin\Product\ListProduct;
+use App\Http\Livewire\Auth\Register;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Livewire\Client\Index as HomeClient;
 use App\Http\Livewire\Client\Product\Detail;
@@ -40,6 +41,7 @@ Route::name('client.')->group(function () {
 
 Route::prefix('auth')->group(function () {
     Route::get('login', Login::class)->name('login');
+    Route::get('register', Register::class)->name('register');
 });
 
 Route::prefix('admin')->group(function () {

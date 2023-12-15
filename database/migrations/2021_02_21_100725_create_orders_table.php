@@ -17,9 +17,9 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('invoice')->unique();
             $table->string('customer_id');
-            $table->string('customer_name');
-            $table->string('customer_phone');
-            $table->string('customer_address');
+            $table->string('recipient_name');
+            $table->string('recipient_phone');
+            $table->string('recipient_address');
             $table->unsignedBigInteger('district_id');
             $table->integer('subtotal');
             $table->timestamps();
