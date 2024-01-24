@@ -80,25 +80,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-
-
-
-
-
                                 @forelse($product as $item)
 
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td><img src="{{ asset('storage/images/product/' . $item->image) }}" height="100px"></td>
-                                        <td>{{ $item->name }} <br> Kategori : <span class="badge badge-primary"> {{ $item->category->category }} </span></td>
+                                        <td><img src="{{ asset('storage/images/product/' . $item->image) }}" height="50px"></td>
+                                        <td>{{ $item->name }} <br> Category : <span class="badge badge-primary"> {{ $item->category->category }} </span></td>
                                         <td>{{ $item->weight }} gr</td>
-                                        <td>Rp. {{ number_format($item->price) }}</td>
+                                        <td>{{ number_format($item->price) }} VND</td>
                                         <td>{{ $item->created_at->format('d M Y') }}</td>
                                         <td>
                                             @if($item->status == 0)
-                                                <span class="badge badge-secondary">Draft</span>
+                                                <span class="badge badge-secondary">Sold Out</span>
                                             @else
-                                                <span class="badge badge-success">Aktif</span>
+                                                <span class="badge badge-success">In Stock</span>
                                             @endif
                                         </td>
                                         <td class="d-flex">

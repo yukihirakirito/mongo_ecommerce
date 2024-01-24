@@ -8,13 +8,11 @@
  */
 namespace Database\Seeders;
 
-
 use Illuminate\Database\Seeder;
-use AzisHapidin\IndoRegion\RawDataGetter;
 use Illuminate\Support\Facades\DB;
+use Kjmtrue\VietnamZone\Models\District;
 
-
-class IndoRegionRegencySeeder extends Seeder
+class RegionDistrictSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -26,9 +24,9 @@ class IndoRegionRegencySeeder extends Seeder
     public function run()
     {
         // Get Data
-        $regencies = RawDataGetter::getRegencies();
+        $districts = District::get();
 
         // Insert Data to Database
-        DB::table('indoregion_regencies')->insert($regencies);
+        DB::table('districts')->insert($districts);
     }
 }

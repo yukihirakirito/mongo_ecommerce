@@ -56,7 +56,6 @@ class ListProduct extends Component
 
     public function createMass()
     {
-
         $this->massOpenForm = true;
         $this->dataCategory = Category::orderBy('created_at', 'DESC')->get();
         $this->openFormCreate();
@@ -142,13 +141,13 @@ class ListProduct extends Component
         $this->dataCategory = Category::orderBy('created_at', 'DESC')->get();
         $this->product_id = $product->id;
         $this->name = $product->name;
+        $this->status = $product->status;
+        $this->category = $product->category_id;
         $this->description = $product->description;
         $this->weight = $product->weight;
         $this->price = $product->price;
         $this->image = $product->image;
         $this->openFormCreate();
-
-
     }
 
     public function update($id)
@@ -171,7 +170,8 @@ class ListProduct extends Component
         if ($this->image) {
             !empty($photo) ? File::delete(public_path('storage/images/product/' . $photo)) : null;
 
-            $photo = strtolower(Str::slug($this->name)).'-'.time().'.'.$this->image->getClientOriginalExtension();
+            // $photo = strtolower(Str::slug($this->name)).'-'.time().'.'.$this->image->getClientOriginalExtension();
+            $photo = strtolower(Str::slug($this->name));
             $path = 'assets/images/product';
 
             $this->image->storeAs('public/images/product', $photo);

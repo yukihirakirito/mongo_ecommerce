@@ -9,27 +9,24 @@
 
 namespace App\Models;
 
-use AzisHapidin\IndoRegion\Traits\VillageTrait;
-use Illuminate\Database\Eloquent\Model;
 use App\Models\District;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Jenssegers\Mongodb\Auth\User as Authenticatable;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Notifications\Notifiable;
 
 /**
  * Village Model.
  */
-class Village extends Eloquent
+class Ward extends Eloquent
 {
-    use VillageTrait, HasFactory, Notifiable;
-    protected $connection = 'mongodb';
+    use HasFactory, Notifiable;
+    protected $connection = 'laravel_ecommerce';
+    protected $collection = 'wards';
     /**
      * Table name.
      *
      * @var string
      */
-    protected $collection = 'indoregion_villages';
 
     /**
      * The attributes that should be hidden for arrays.

@@ -10,7 +10,7 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="hero-cap text-center">
-                                    <h2>Blanja Shop</h2>
+                                    <h2>Sport Shop</h2>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                                             </div>
                                             <div class="popular-caption">
                                                 <h3><a href='{{ url("product/{$item->slug}") }}'>{{ $item->name }}</a></h3>
-                                                <span>Rp. {{ number_format($item->price) }}</span>
+                                                <span>{{ number_format($item->price) }} VND</span>
                                             </div>
                                         </div>
                                     </div>

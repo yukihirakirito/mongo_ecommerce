@@ -9,9 +9,7 @@
 
 namespace App\Models;
 
-use AzisHapidin\IndoRegion\Traits\ProvinceTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Jenssegers\Mongodb\Auth\User as Authenticatable;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Notifications\Notifiable;
 
@@ -20,14 +18,14 @@ use Illuminate\Notifications\Notifiable;
  */
 class Province extends Eloquent
 {
-    use ProvinceTrait, HasFactory, Notifiable;
-    protected $connection = 'mongodb';
+    use HasFactory, Notifiable;
+    protected $connection = 'laravel_ecommerce';
+    protected $collection = 'provinces';
     /**
      * Table name.
      *
      * @var string
      */
-    protected $collection = 'indoregion_provinces';
 
     /**
      * Province has many regencies.

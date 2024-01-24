@@ -11,7 +11,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class IndoRegionSeeder extends Seeder
+class RegionSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -20,9 +20,8 @@ class IndoRegionSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(IndoRegionProvinceSeeder::class);
-        $this->call(IndoRegionRegencySeeder::class);
-        $this->call(IndoRegionDistrictSeeder::class);
-        $this->call(IndoRegionVillageSeeder::class);
+        $this->call(RegionProvinceSeeder::class);
+        $this->call(RegionDistrictSeeder::class);
+        $this->call(RegionWardSeeder::class);
     }
 }

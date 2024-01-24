@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2>Blanja Shop | Cart List</h2>
+                                <h2>Sport Shop | Cart List</h2>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                               </div>
                             </td>
                             <td>
-                              <span>Rp. {{ number_format($item->price) }}</span>
+                              <span>{{ number_format($item->price) }} VND</span>
                             </td>
                             <td>
                                 <div class="product_count">
@@ -65,7 +65,7 @@
                                 </div>
                             </td>
                             <td>
-                              <span>Rp. {{ number_format($item->subtotal) }}</span>
+                              <span>{{ number_format($item->subtotal) }}</span>
                             </td>
                             <td>
                                 <button wire:click='removeItem("{{ $item->rowId }}")' class="genric-btn danger small"><i class="fas fa-trash-alt"></i></button>
@@ -85,9 +85,9 @@
                             <h5>Total</h5>
                           </td>
                           <td>
-                            <h5>Rp. {{ Cart::tax() }}</h5><br>
-                            <h5>Rp. {{ Cart::subtotal() }}</h5><br>
-                            <h5>Rp. {{ Cart::total() }}</h5>
+                            <h5>{{ Cart::tax() }} VND</h5><br>
+                            <h5>{{ Cart::subtotal() }} VND</h5><br>
+                            <h5>{{ Cart::total() }} VND</h5>
                           </td>
 
                         @endif

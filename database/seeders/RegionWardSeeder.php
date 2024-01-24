@@ -10,10 +10,10 @@ namespace Database\Seeders;
 
 
 use Illuminate\Database\Seeder;
-use AzisHapidin\IndoRegion\RawDataGetter;
+use Kjmtrue\VietnamZone\Models\Ward;
 use Illuminate\Support\Facades\DB;
 
-class IndoRegionProvinceSeeder extends Seeder
+class RegionWardSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -25,9 +25,9 @@ class IndoRegionProvinceSeeder extends Seeder
     public function run()
     {
         // Get Data
-        $provinces = RawDataGetter::getProvinces();
-
+        $villages = Ward::get();
+        
         // Insert Data to Database
-        DB::table('indoregion_provinces')->insert($provinces);
+        DB::table('wards')->insert($villages);
     }
 }

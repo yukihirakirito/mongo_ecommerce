@@ -9,7 +9,7 @@
                             <div class="single-footer-caption mb-30">
                                 <!-- logo -->
                                 <div class="footer-logo">
-                                    <h2>Blanja</h2>
+                                    <h2>Sport</h2>
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">

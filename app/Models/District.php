@@ -9,11 +9,9 @@
 
 namespace App\Models;
 
-use AzisHapidin\IndoRegion\Traits\DistrictTrait;
 use App\Models\Regency;
-use App\Models\Village;
+use App\Models\Ward;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Jenssegers\Mongodb\Auth\User as Authenticatable;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Notifications\Notifiable;
 
@@ -22,16 +20,15 @@ use Illuminate\Notifications\Notifiable;
  */
 class District extends Eloquent
 {
-    use DistrictTrait, HasFactory, Notifiable;
-    protected $connection = 'mongodb';
+    use HasFactory, Notifiable;
+    protected $connection = 'laravel_ecommerce';
 
     /**
      * Table name.
      *
      * @var string
      */
-    protected $collection = 'indoregion_districts';
-
+    protected $collection = 'districts';
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -58,6 +55,6 @@ class District extends Eloquent
      */
     public function villages()
     {
-        return $this->hasMany(Village::class);
+        return $this->hasMany(Ward::class);
     }
 }

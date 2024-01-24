@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2>Blanja Shop</h2>
+                                <h2>Sport Shop</h2>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                            </thead>
                            <tbody>
                               <tr>
-                                 <td>Rp. {{ number_format($product->price) }}</td>
+                                 <td>{{ number_format($product->price) }} VND</td>
                                  <td>{{ $product->weight }}</td>
                                  <td>{{ $product->category->category }}</td>
                               </tr>

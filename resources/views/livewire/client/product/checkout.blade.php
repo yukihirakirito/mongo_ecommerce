@@ -232,7 +232,7 @@
                           <li>
                             <a href="#">{{ $item->name }}
                               <span class="middle">x {{ $item->qty }}</span>
-                              <span class="last">Rp. {{ number_format($item->subtotal) }}</span>
+                              <span class="last">{{ number_format($item->subtotal) }} VND</span>
                             </a>
                           </li>
                           <li class="d-none">
@@ -250,11 +250,11 @@
                         </li>
                         <li>
                           <a href="#">Subtotal
-                            <span>Rp. {{ Cart::subtotal() }}</span>
+                            <span>{{ Cart::subtotal() }}</span>
                           </a>
                         </li>
                           <a href="#">Total
-                            <span>Rp. {{ Cart::total() }}</span>
+                            <span>{{ Cart::total() }}</span>
                           </a>
                         </li>
                       </ul>

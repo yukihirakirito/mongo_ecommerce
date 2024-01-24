@@ -7,7 +7,7 @@
                     <div class="menu-wrapper">
                         <!-- Logo -->
                         <div class="logo">
-                            <h2>Blanja</h2>
+                            <h2>Sport</h2>
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu d-none d-lg-block">

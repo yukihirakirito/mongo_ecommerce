@@ -12,7 +12,7 @@
         <div class="form-group">
             <label for="category">Category</label>
             <select name="category" id="category" class="form-control @error('category') is-invalid @enderror" wire:model.lazy="category">
-                <option>Pilih</option>
+                <option>--category--</option>
                 @foreach($dataCategory as $item)
                      <option value="{{ $item->_id }}">{{ $item->category }}</option>
                 @endforeach
@@ -23,9 +23,9 @@
             <div class="form-group">
                 <label for="status">Status</label>
                 <select name="status" id="status" class="form-control @error('status') is-invalid @enderror" wire:model.lazy="status">
-                    <option>Pilih</option>
-                    <option value="1">Publish</option>
-                    <option value="0">Draft</option>
+                    <option>--status--</option>
+                    <option value="1">In stock</option>
+                    <option value="0">Sold out</option>
                 </select>
                 @error('status') <span class="text-danger">{{ $message }}</span> @enderror
             </div>

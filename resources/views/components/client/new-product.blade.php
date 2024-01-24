@@ -19,7 +19,7 @@
                         </div>
                         <div class="product-caption">
                             <h3><a href='{{ url("product/{$item->slug}") }}'>{{ $item->name }}</a></h3>
-                            <span>Rp. {{ number_format($item->price) }}</span>
+                            <span>{{ number_format($item->price) }} VND</span>
                         </div>
                     </div>
                 </div>

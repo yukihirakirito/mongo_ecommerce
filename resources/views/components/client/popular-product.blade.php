@@ -7,7 +7,6 @@
                 <div class="col-xl-7 col-lg-8 col-md-10">
                     <div class="section-tittle mb-70 text-center">
                         <h2>Popular Items</h2>
-                        <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
                     </div>
                 </div>
             </div>
@@ -29,7 +28,7 @@
                         </div>
                         <div class="popular-caption">
                             <h3><a href='{{ url("product/{$item->slug}") }}'>{{ $item->name }}</a></h3>
-                            <span>Rp. {{ number_format($item->price) }}</span>
+                            <span>{{ number_format($item->price) }} VND</span>
                         </div>
                     </div>
                 </div>
