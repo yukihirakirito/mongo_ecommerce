@@ -29,7 +29,7 @@
                                         <span class="flaticon-search"></span>
                                     </div>
                                 </li>
-                                <li> <a href="login.html"><span class="flaticon-user"></span></a></li>
+                                <li><a href='{{ route('login') }}'><span class="flaticon-user"></span></a></li>
                                 <li><a href='{{ route('client.cart') }}'><span class="flaticon-shopping-cart"><span style="margin-left: -10px">{{ $cartTotal }}</span></span></a></li>
                             </ul>
                         </div>
