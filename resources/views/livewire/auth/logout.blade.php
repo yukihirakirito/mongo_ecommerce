@@ -3,7 +3,7 @@
 
     @if (session()->has('logout'))
         <script>
-            var url = "{{ route('login') }}";
+            var url = "{{ route('auth.login') }}";
             setTimeout(function(){
                 window.location = url;
             },100);

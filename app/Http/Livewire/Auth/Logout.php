@@ -18,8 +18,6 @@ class Logout extends Component
     {
         Auth::logout();
         session()->flash('logout', '');
-
-
     }
 
 

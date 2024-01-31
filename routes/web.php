@@ -3,11 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Admin\Home;
 use App\Http\Livewire\Auth\Login;
-use App\Models\User;
 use App\Http\Livewire\Admin\Category\Category;
 use App\Http\Livewire\Admin\Product\ListProduct;
+use App\Http\Livewire\Auth\Google;
 use App\Http\Livewire\Auth\Register;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Livewire\Client\Index as HomeClient;
 use App\Http\Livewire\Client\Product\Detail;
 use App\Http\Livewire\Client\Product\Shop;
@@ -39,9 +38,11 @@ Route::name('client.')->group(function () {
 
 
 
-Route::prefix('auth')->group(function () {
+Route::name('auth.')->group(function () {
     Route::get('login', Login::class)->name('login');
     Route::get('register', Register::class)->name('register');
+    Route::get('login/google', [Google::class, 'loginGoogle'])->name('login.google');
+    Route::get('login/google/callback', [Google::class, 'loginGoogleCallback'])->name('login.google.callback');
 });
 
 Route::prefix('admin')->group(function () {

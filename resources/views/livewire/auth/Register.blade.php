@@ -17,7 +17,7 @@
                             <form class="user" wire:submit.prevent="regist">
                                 @if (session()->has('successRegist'))
                                     <script>
-                                        var url = "{{ route('login') }}";
+                                        var url = "{{ route('auth.login') }}";
                                         setTimeout(function(){
                                             window.location = url;
                                         },3500);

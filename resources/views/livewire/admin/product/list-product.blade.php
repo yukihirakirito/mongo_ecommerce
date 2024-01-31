@@ -17,17 +17,14 @@
                     @if ($mass)
                         <button wire:click='createMass' class="btn btn-primary">Mass Upload Product</button>
                     @else
-                    <button wire:click='create' class="btn btn-primary">Create Product</button>
+                        <button wire:click='create' class="btn btn-primary">Create Product</button>
                     @endif
-
                 </div>
 
                 <div class="table-responsive p-3">
                     @if($isFormCreate)
                         @include('livewire.admin.product.create')
                     @else
-
-
                         @if (session()->has('successCreate'))
                             <div class="alert alert-success alert-dismissible" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -110,7 +107,6 @@
 
                         <div class="mt-3 mb-3">
                             {{ $product->links() }}
-
                         </div>
                     @endif
                 </div>

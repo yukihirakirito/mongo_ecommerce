@@ -13,11 +13,10 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
-                                    <li><a href="{{ route('client.home')}}" wire:click='$refresh' >Home</a></li>
-                                    <li><a href="{{ route('client.shop') }}">shop</a></li>
-                                    <li><a href="about.html">about</a></li>
-
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href=" {{ route('client.home')}}" wire:click='$refresh'> Trang Chủ </a></li>
+                                    <li><a href=" {{ route('client.shop') }}"> Sản Phẩm </a></li>
+                                    <li><a href=" {{ route('client.shop') }}"> Giới Thiệu </a></li>
+                                    <li><a href="contact.html"> Liên Hệ </a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -29,7 +28,7 @@
                                         <span class="flaticon-search"></span>
                                     </div>
                                 </li>
-                                <li><a href='{{ route('login') }}'><span class="flaticon-user"></span></a></li>
+                                <li><a href='{{ route('auth.login') }}'><span class="flaticon-user"></span></a></li>
                                 <li><a href='{{ route('client.cart') }}'><span class="flaticon-shopping-cart"><span style="margin-left: -10px">{{ $cartTotal }}</span></span></a></li>
                             </ul>
                         </div>

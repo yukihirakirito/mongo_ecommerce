@@ -13,7 +13,7 @@
 
     @if ($toLogin)
       <script>
-        var url = "{{ route('login') }}";
+        var url = "{{ route('auth.login') }}";
         setTimeout(function(){
             window.location = url;
         },3500);

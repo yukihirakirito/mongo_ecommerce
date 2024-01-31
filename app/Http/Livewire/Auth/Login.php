@@ -3,9 +3,7 @@
 namespace App\Http\Livewire\Auth;
 
 use Livewire\Component;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Alert;
 
 class Login extends Component
 {
@@ -53,6 +51,5 @@ class Login extends Component
             return $e->getMessage();
         }
     }
-
 
 }
